@@ -1,0 +1,55 @@
+{
+    "federated_learning": {
+        "num_clients": 1000,
+        "num_rounds": 500,
+        "q": 0.8,
+        "client_lr": 0.001,
+        "server_lr": 1.0,
+        "localE": 30,
+        "bs": 64,
+        "seed": 12345
+    },
+    "model": {
+        "architecture": "MLP",
+        "input_shape": [28, 28],
+        "output_dim": 10
+    },
+    "data": {
+        "dataset": "fmnist",
+        "alpha": 2.0,
+        "data_dir": "./data" 
+    },
+    "selection": {
+        "strategy": "self",
+        "th_0": 2.32,
+        "thU": 3.0,
+        "thL": -1.0,
+        "a": 50,
+        "d": 200,
+        "Ktar": 100,
+        "gamma": 0.004
+    },
+    "communication": {
+        "perfect_comm": 0,
+        "decoder_type": "centralized",
+        "SNR_rx_dB": 10.0,
+        "zone_side": 0.1,
+        "blocklength": 50,
+        "prior_type": "default",
+        "A": 4,
+        "rho": 3.67,
+        "d0": 0.01357,
+        "nAMPiter": 2, 
+        "N_MC": 50, 
+        "N_MC_smaller": 1, 
+        "Kmax": 8,
+        "perfectCSI": 1,
+        "phase_max_pi_div": 6
+    },
+    "quantization": {
+        "apply": 1,
+        "method": "kmeans++",
+        "Q": 30,
+        "J": 7
+    }
+}
