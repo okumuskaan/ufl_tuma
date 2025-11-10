@@ -156,6 +156,49 @@ class CommunicationManager:
                 self.est_mults = list(est_mults_list)
                 self.est_num_sclients = list(est_num_sclients_list)
 
+    def run_comm_for_GUI(self, comm_bar):
+        if self.perfect_comm:
+            pass
+        else:
+            if not self.parallel_implementation:
+                for sub_rnd in tqdm(range(self.sub_rnds), desc=f"\tComm. subround"):
+                    comm_bar.progress((sub_rnd+1)/self.sub_rnds, text=f"FL rounds in progress, round: {sub_rnd+1}/{self.sub_rnds}")
+                    self.TUMA_env.compute_global_type()
+                    self.TUMA_env.generate_X()
+                    self.TUMA_env.transmit()
+                    self.TUMA_env.decoder()
+                    self.TUMA_env.go_next_sub_round()
+                    if self.plot_type_estimation:
+                        if sub_rnd==0 or sub_rnd==10 or sub_rnd==20:
+                            self.TUMA_env.visualize_type_estimation()
+                    if (sub_rnd+1)==self.sub_rnds:
+                        comm_bar.progress((sub_rnd+1)/self.sub_rnds, text="Comm. completed.")                    
+            else:
+                args = []
+                for sub_rnd in range(self.sub_rnds):
+                    args.append((
+                        self.all_data[:, sub_rnd], self.zone_ids, self.LSFCs, 
+                        self.U, self.M, self.B, self.A, self.F, self.nP, 
+                        self.C_blocks, self.CH_blocks,
+                        self.decoder_type, 
+                        self.log_priors, self.all_covs, self.all_covs_smaller,
+                        self.blocklength, self.sigma_w, self.nAMPiter, 
+                        self.perfect_CSI, self.imperfection_model, self.phase_max,
+                        self.comm_device
+                    ))
+
+                # Run in parallel
+                with mp.get_context("spawn").Pool(processes=self.num_workers, initializer=_init_worker) as pool:
+                    results = list(pool.starmap(run_comm_single_round, args))
+
+                # Collect results
+                est_quant_indices_list, est_mults_list, est_num_sclients_list = zip(*results)
+
+                # Store results in class attributes
+                self.est_quant_indices = list(est_quant_indices_list)
+                self.est_mults = list(est_mults_list)
+                self.est_num_sclients = list(est_num_sclients_list)
+
     def return_output(self):
         if self.perfect_comm:
             return self.true_quant_indices, self.true_mults, self.true_Ka
