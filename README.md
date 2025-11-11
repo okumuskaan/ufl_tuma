@@ -96,12 +96,19 @@ This work is based on our paper currently under review for IEEE ICC 2026. Citati
  
 ## References
 
+- **TUMA**:
+  K.-H. Ngo, D. P. Krishnan, K. Okumus, G. Durisi, and E. G. Ström, "Type-Based Unsourced Multiple Access", *IEEE Workshop on Signal Processing Advances in Wireless Communications (SPAWC)*, 2024.  [https://ieeexplore.ieee.org/document/10694658](https://ieeexplore.ieee.org/document/10694658)
+
+- **TUMA over fading channels with CF massive MIMO**:
+  K. Okumus, K.-H. Ngo, G. Durisi, and E. G. Ström, "Type-Based Unsourced Multiple Access Over Fading Channels with Cell-Free Massive MIMO", *IEEE International Symposium on Information Theory (ISIT)*, 2025.  [https://ieeexplore.ieee.org/document/11195493](https://ieeexplore.ieee.org/document/11195493)
+
 - **Multisource AMP Algorithm**:
-  B. Cakmak, E. Gkiouzepi, M. Opper, and G. Caire, "Joint Message Detection and Channel Estimation for Unsourced Random Access in Cell-Free User-Centric Wireless Networks," *IEEE Transactions on Information Theory*, 2025. [https://ieeexplore.ieee.org/abstract/document/10884602](https://ieeexplore.ieee.org/abstract/document/10884602)
+  B. Cakmak, E. Gkiouzepi, M. Opper, and G. Caire, "Joint Message Detection and Channel Estimation for Unsourced Random Access in Cell-Free User-Centric Wireless Networks," *IEEE Transactions on Information Theory*, 2025. [https://ieeexplore.ieee.org/document/10884602](https://ieeexplore.ieee.org/document/10884602)
 
 - **MD-AirComp's AMP-DA Algorithm**:
   L. Qiao, Z. Gao, M. B. Mashadi, and D. Gunduz "Digital Over-the-Air Aggregation for Federated Edge Learning," *IEEE Journal on Selected Areas in Communications*, 2024. [https://ieeexplore.ieee.org/document/10648926](https://ieeexplore.ieee.org/document/10648926)
 
 - **Code References**:
-  + AMP-DA codes based on [liqiao19/MD-AirComp](https://github.com/liqiao19/MD-AirComp).
   + Code-base influenced by [pringlesinghal/GreedyFed](https://github.com/pringlesinghal/GreedyFed).
+  + TUMA scheme codes from [okumuskaan/tuma_fading_cf](https://github.com/okumuskaan/tuma_fading_cf).
+  + AMP-DA codes based on [liqiao19/MD-AirComp](https://github.com/liqiao19/MD-AirComp).
