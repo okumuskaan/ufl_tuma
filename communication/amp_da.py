@@ -4,9 +4,9 @@ AMP-DA Implementation
 This file contains the AMP-DA algorithm.
 
 References:
-- L. Qiao, J. Zhang, and K. B. Letaief, "Massive Digital Over-the-Air Computation for
-Communication-Efficient Federated Edge Learning," 
-  IEEE Transactions on Wireless Communications, 2024. https://github.com/liqiao19/MD-AirComp
+- L. Qiao, Z. Gao, M. B. Mashadi, and D. Gunduz "Digital Over-the-Air Aggregation for Federated Edge Learning," 
+IEEE Journal on Selected Areas in Communications, 2024. 
+- https://github.com/liqiao19/MD-AirComp
 """
 
 import torch
