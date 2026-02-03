@@ -1,6 +1,6 @@
 # Type-Based Unsourced Federated Learning with Client Self Selection
 
-This repository provides research code for the unsourced federated learning framework proposed in our paper, currently under review for IEEE ICC 2026. The framework integrates a client self-selection strategy into federated learning while addressing challenges of noisy communication over wireless fading channels. To model and manage the communication, we employ the type-based unsourced multiple access (TUMA) scheme over a distributed MIMO network.
+This repository provides research code for the unsourced federated learning framework proposed in our paper, accepted to IEEE International Conference on Communication (ICC) 2026. The framework integrates a client self-selection strategy into federated learning while addressing challenges of noisy communication over wireless fading channels. To model and manage the communication, we employ the type-based unsourced multiple access (TUMA) scheme over a distributed MIMO network.
 
 
 ## Environment
@@ -91,7 +91,7 @@ You can run the project in two ways:
 
 ## Citation
 
-This work is based on our paper currently under review for IEEE ICC 2026. Citation details will be added if the paper is accepted and published.
+This work is based on our paper accepted to IEEE ICC 2026. Citation details will be added once the paper is published.
 
  
 ## References
