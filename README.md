@@ -28,12 +28,12 @@ Then, install the required libraries:
 
 The project structure is as follows:
 ```bash
-.
-├── core  
+./
+├── core/  
 │  ├── client.py                    # Client class
 │  ├── server.py                    # Server class
 │  └── federated_learning.py        # Federated learning simulation function
-├── communication  
+├── communication/  
 │  ├── comm_manager.py              # CommunicationManager class
 │  ├── amp_da.py                    # MD-AirComp AMP-DA function
 │  ├── topology.py                  # Network Topology class
@@ -41,18 +41,18 @@ The project structure is as follows:
 │  ├── tuma_centralized_decoder.py  # TUMA centralized decoder function 
 │  ├── tuma_distributed_decoder.py  # TUMA distributed decoder function 
 │  └── tuma.py                      # TUMAEnvironment class
-├── data 
+├── data/ 
 │  └── data_handler.py              # DataHandler class
-├── model 
+├── model/ 
 │  └── model_handler.py             # modelHandler function
-├── quant
+├── quant/
 │  └── vq_handler.py                # vqHandler function
-├── setup
+├── setup/
 │  └── initialize.py                # initialize_network_and_data function
-├── utils
+├── utils/
 │  ├── config_loader.py             # ConfigLoader class
 │  └── logger.py                    # Logger class
-├── configs
+├── configs/
 │  └── sample_config.json           # Example configuration file
 ├── run.py                          # Run simulation directly via command line
 ├── run_GUI.py                      # Streamlit GUI for interactive runs
@@ -91,7 +91,20 @@ You can run the project in two ways:
 
 ## Citation
 
-This work is based on our paper accepted to IEEE ICC 2026. Citation details will be added once the paper is published.
+This work is based on our paper accepted to IEEE ICC 2026, which has not been published yet. You can cite the arXiv version of that paper:
+
+```bibtex
+@misc{okumus2026ufltuma,
+      title={Type-Based Unsourced Federated Learning With Client Self-Selection}, 
+      author={Kaan Okumus and Khac-Hoang Ngo and Unnikrishnan Kunnath Ganesan and Giuseppe Durisi and Erik G. Ström and Shashi Raj Pandey},
+      year={2026},
+      month={Feb.},
+      eprint={2602.06601},
+      archivePrefix={arXiv},
+      primaryClass={cs.IT},
+      url={https://arxiv.org/abs/2602.06601}, 
+}
+```
 
  
 ## References
