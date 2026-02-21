@@ -218,6 +218,8 @@ class TUMAEnvironment:
                         if self.decoder_type == "AMP-DA":
                             if self.perfect_CSI:
                                 h_e = h[0].clone()  # Use exact channel vector
+                                norm_factor = torch.sqrt(torch.abs(h_e) ** 2)
+                                h_e /= norm_factor
                             else:
                                 if self.imperfection_model == "phase":
                                     phase = torch.empty(1, device=self.device).uniform_(0, self.phase_max)
